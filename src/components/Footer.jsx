@@ -1,44 +1,39 @@
 import React from 'react';
 import { 
-  Sparkles, 
+  TreePine, 
   Instagram, 
   MessageCircle, 
   MapPin, 
-  Mail, 
-  Phone, 
-  Award, 
   ShieldCheck,
-  ExternalLink
+  CheckCircle2
 } from 'lucide-react';
 import { INSTAGRAM_URL, WHATSAPP_CATALOG_URL, INSTAGRAM_HANDLE } from '../data/products';
 
 export default function Footer({ onOpenCustomQuote }) {
   return (
-    <footer className="bg-royalCard border-t border-royalBorder text-royalText pt-16 pb-12">
+    <footer className="bg-wood-950 text-wood-100 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-royalBorder">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-wood-800">
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <a href="#" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 p-0.5 shadow-gold-glow">
-                <div className="w-full h-full bg-royalDark rounded-[10px] flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-gold-royal" />
-                </div>
+              <div className="w-10 h-10 rounded-xl bg-wood-800 border border-wood-700 text-amber-400 flex items-center justify-center">
+                <TreePine className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xl font-serif font-bold text-gold-gradient tracking-wider block">
+                <span className="text-xl font-serif font-extrabold text-white tracking-wider block">
                   AL HASAN
                 </span>
-                <span className="text-[9px] tracking-[0.25em] text-gray-400 font-semibold uppercase block">
+                <span className="text-[9px] tracking-[0.25em] text-wood-400 font-bold uppercase block">
                   Handicrafts Official
                 </span>
               </div>
             </a>
 
-            <p className="text-xs text-gray-300 font-light leading-relaxed max-w-sm">
-              Premier manufacturer, wholesaler, and exporter of authentic Moradabad brassware, royal urlis, Moroccan lanterns, Islamic calligraphy art, and fine metal table decor.
+            <p className="text-xs text-wood-300 font-medium leading-relaxed max-w-sm">
+              Direct manufacturer & wholesaler of authentic Sheesham wooden masala boxes, Neem spatulas, belans, jewellery chests, chess sets, and handcrafted woodenware.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -46,7 +41,7 @@ export default function Footer({ onOpenCustomQuote }) {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-royalDark border border-pink-900/40 text-pink-400 hover:border-pink-500 transition-colors"
+                className="p-2.5 rounded-xl bg-wood-900 border border-pink-900/40 text-pink-400 hover:border-pink-500 transition-colors"
                 title="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -55,7 +50,7 @@ export default function Footer({ onOpenCustomQuote }) {
                 href={WHATSAPP_CATALOG_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-royalDark border border-emerald-800/40 text-emerald-400 hover:border-emerald-500 transition-colors"
+                className="p-2.5 rounded-xl bg-wood-900 border border-emerald-800/40 text-emerald-400 hover:border-emerald-500 transition-colors"
                 title="WhatsApp Catalog"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -65,50 +60,44 @@ export default function Footer({ onOpenCustomQuote }) {
 
           {/* Quick Links */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-serif font-bold text-gold-300 text-sm uppercase tracking-wider">
+            <h4 className="font-serif font-bold text-amber-400 text-sm uppercase tracking-wider">
               Navigation
             </h4>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2 text-wood-300 font-medium">
+              <li><a href="#catalog" className="hover:text-white transition-colors">Products Catalog</a></li>
+              <li><a href="#craftsmanship" className="hover:text-white transition-colors">Wood Artisan Heritage</a></li>
+              <li><a href="#instagram" className="hover:text-white transition-colors">Instagram Feed</a></li>
               <li>
-                <a href="#catalog" className="hover:text-gold-royal transition-colors">Artisanal Catalog</a>
-              </li>
-              <li>
-                <a href="#craftsmanship" className="hover:text-gold-royal transition-colors">Our Metal Craftsmanship</a>
-              </li>
-              <li>
-                <a href="#instagram" className="hover:text-gold-royal transition-colors">Instagram Feed Showcase</a>
-              </li>
-              <li>
-                <button onClick={onOpenCustomQuote} className="hover:text-gold-royal transition-colors text-left">
-                  Request Custom Quote
+                <button onClick={onOpenCustomQuote} className="hover:text-white transition-colors text-left">
+                  Request Wholesale Quote
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Product Categories */}
+          {/* Categories */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-serif font-bold text-gold-300 text-sm uppercase tracking-wider">
-              Handicrafts
+            <h4 className="font-serif font-bold text-amber-400 text-sm uppercase tracking-wider">
+              Woodenware
             </h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>Royal Brass Urlis & Bowls</li>
-              <li>Moroccan & Vintage Lanterns</li>
-              <li>Islamic Calligraphy Wall Art</li>
-              <li>Imperial Brass Cutlery Sets</li>
-              <li>Mughal Etched Vases & Statues</li>
+            <ul className="space-y-2 text-wood-300 font-medium">
+              <li>Hexa & 9-Container Masala Boxes</li>
+              <li>Neem Wooden Spatulas & Ladles</li>
+              <li>Sheesham Chapati & Roti Boxes</li>
+              <li>Bangles & Jewellery Chests</li>
+              <li>Wooden Chess Sets & Board Games</li>
             </ul>
           </div>
 
-          {/* Contact & Export Hub */}
+          {/* Contact */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-serif font-bold text-gold-300 text-sm uppercase tracking-wider">
-              Export Hub
+            <h4 className="font-serif font-bold text-amber-400 text-sm uppercase tracking-wider">
+              Contact Store
             </h4>
-            <ul className="space-y-2.5 text-gray-300 font-light">
+            <ul className="space-y-2.5 text-wood-300 font-medium">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-gold-royal shrink-0 mt-0.5" />
-                <span>Moradabad (Pital Nagri), Uttar Pradesh, 244001, India</span>
+                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <span>Moradabad, Uttar Pradesh, 244001, India</span>
               </li>
               <li className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -116,9 +105,9 @@ export default function Footer({ onOpenCustomQuote }) {
                   href={WHATSAPP_CATALOG_URL} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="hover:underline text-emerald-400 font-medium"
+                  className="hover:underline text-emerald-400 font-bold"
                 >
-                  WhatsApp Catalog Link
+                  WhatsApp Catalog Store
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -127,7 +116,7 @@ export default function Footer({ onOpenCustomQuote }) {
                   href={INSTAGRAM_URL} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="hover:underline text-pink-400 font-medium"
+                  className="hover:underline text-pink-400 font-bold"
                 >
                   @{INSTAGRAM_HANDLE}
                 </a>
@@ -137,14 +126,11 @@ export default function Footer({ onOpenCustomQuote }) {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-wood-400 gap-4 font-medium">
           <p>© {new Date().getFullYear()} Al Hasan Handicrafts Official. All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-gold-400" /> Authentic Brass Quality Guaranteed
-            </span>
-          </div>
+          <span className="flex items-center gap-1.5 text-wood-300">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 100% Solid Sheesham & Neem Wood Quality Guaranteed
+          </span>
         </div>
 
       </div>

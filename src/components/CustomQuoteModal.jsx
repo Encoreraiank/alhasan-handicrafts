@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { X, Send, Sparkles, MessageCircle, Building2, Package } from 'lucide-react';
+import { X, MessageCircle, Sparkles } from 'lucide-react';
 import { WHATSAPP_PHONE } from '../data/products';
 
-export default function CustomQuoteModal({ preselectedProduct, onClose }) {
+export default function CustomQuoteModal({ onClose }) {
   const [formData, setFormData] = useState({
     name: '',
     city: '',
-    purpose: 'Wholesale / Export Inquiry',
-    productName: preselectedProduct ? preselectedProduct.name : 'Custom Brass Design',
+    purpose: 'Wholesale Purchase',
+    productName: 'Sheesham Woodenware Items',
     quantity: '50-100 pcs',
     customNotes: ''
   });
@@ -15,7 +15,7 @@ export default function CustomQuoteModal({ preselectedProduct, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const text = encodeURIComponent(
-      `Hello Al Hasan Handicrafts Official! 🏛️\n\n*BULK / CUSTOM ORDER INQUIRY*\n` +
+      `Hello Al Hasan Handicrafts! 🪵\n\n*BULK / CUSTOM ORDER INQUIRY*\n` +
       `👤 *Name:* ${formData.name || 'Valued Customer'}\n` +
       `📍 *Location:* ${formData.city || 'Not specified'}\n` +
       `📦 *Purpose:* ${formData.purpose}\n` +
@@ -29,112 +29,95 @@ export default function CustomQuoteModal({ preselectedProduct, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fadeIn">
-      <div className="relative w-full max-w-lg bg-royalCard border border-gold-600/40 rounded-3xl p-6 sm:p-8 shadow-2xl text-white">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fadeIn">
+      <div className="relative w-full max-w-lg bg-white border border-wood-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-wood-950">
         
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-royalDark text-gray-400 hover:text-white border border-royalBorder hover:border-gold-royal transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full bg-cream-100 text-wood-600 hover:text-black transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         <div className="space-y-2 mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-950 border border-gold-600/30 text-gold-300 text-[11px] font-semibold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-gold-royal" />
-            Bulk & Custom Manufacturing
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
-            Request Custom Quotation
+          <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-200">
+            Wholesale & Custom Manufacturing
+          </span>
+          <h2 className="text-2xl font-serif font-extrabold text-wood-950">
+            Bulk / Export Quotation
           </h2>
-          <p className="text-xs text-gray-400 font-light">
-            Need customized dimensions, corporate branding, or bulk export pricing? Fill in your details to get an instant quote on WhatsApp.
+          <p className="text-xs text-wood-600 font-medium">
+            Need bulk rates for Neem spatulas, masala boxes, chess sets, or custom woodenware? Send us your requirements directly on WhatsApp.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
-          
           <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">Your Full Name</label>
+            <label className="block text-xs font-bold text-wood-900 mb-1">Your Full Name</label>
             <input
               type="text"
               required
-              placeholder="e.g. Rahul Verma / Sarah Smith"
+              placeholder="e.g. Amit Sharma / Sarah"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full bg-royalDark border border-royalBorder focus:border-gold-royal rounded-xl px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none"
+              className="w-full bg-cream-100 border border-wood-200 focus:border-wood-800 rounded-xl px-4 py-2.5 text-wood-950 placeholder-wood-400 focus:outline-none font-medium"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-medium text-gray-300 mb-1">City / Country</label>
+              <label className="block text-xs font-bold text-wood-900 mb-1">City / State</label>
               <input
                 type="text"
                 required
-                placeholder="e.g. Dubai, UAE / Delhi"
+                placeholder="e.g. Delhi / Bangalore"
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                className="w-full bg-royalDark border border-royalBorder focus:border-gold-royal rounded-xl px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none"
+                className="w-full bg-cream-100 border border-wood-200 focus:border-wood-800 rounded-xl px-4 py-2.5 text-wood-950 placeholder-wood-400 focus:outline-none font-medium"
               />
             </div>
             <div>
-              <label className="block text-xs font-medium text-gray-300 mb-1">Estimated Quantity</label>
+              <label className="block text-xs font-bold text-wood-900 mb-1">Quantity</label>
               <select
                 value={formData.quantity}
                 onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                className="w-full bg-royalDark border border-royalBorder focus:border-gold-royal rounded-xl px-3 py-2.5 text-white focus:outline-none cursor-pointer"
+                className="w-full bg-cream-100 border border-wood-200 focus:border-wood-800 rounded-xl px-3 py-2.5 text-wood-950 font-bold focus:outline-none cursor-pointer"
               >
-                <option value="10-25 pcs">10 - 25 pcs (Sample Order)</option>
+                <option value="10-25 pcs">10 - 25 pcs (Sample)</option>
                 <option value="50-100 pcs">50 - 100 pcs</option>
                 <option value="200-500 pcs">200 - 500 pcs (Wholesale)</option>
-                <option value="1000+ pcs">1000+ pcs (Export Container)</option>
+                <option value="1000+ pcs">1000+ pcs (Export Shipment)</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">Inquiry Purpose</label>
-            <select
-              value={formData.purpose}
-              onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
-              className="w-full bg-royalDark border border-royalBorder focus:border-gold-royal rounded-xl px-3 py-2.5 text-white focus:outline-none cursor-pointer"
-            >
-              <option value="Wholesale / Resale">Wholesale / Retail Resale</option>
-              <option value="Hotel & Resort Decor">Hotel & Luxury Resort Decor</option>
-              <option value="Wedding Return Gifts">Wedding & Event Gifting</option>
-              <option value="Custom OEM Design">Custom OEM Design Manufacturing</option>
-              <option value="International Export">International Export Shipment</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">Target Product / Item Name</label>
+            <label className="block text-xs font-bold text-wood-900 mb-1">Product Category / Items</label>
             <input
               type="text"
               value={formData.productName}
               onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
-              className="w-full bg-royalDark border border-royalBorder focus:border-gold-royal rounded-xl px-4 py-2.5 text-white focus:outline-none"
+              className="w-full bg-cream-100 border border-wood-200 focus:border-wood-800 rounded-xl px-4 py-2.5 text-wood-950 font-medium focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">Custom Notes / Specifications</label>
+            <label className="block text-xs font-bold text-wood-900 mb-1">Custom Notes / Specs</label>
             <textarea
               rows="3"
-              placeholder="Specify dimensions, desired finish (Antique gold, polished brass, copper patina), logo engraving..."
+              placeholder="Specify custom sizes (e.g. 10 inch belan, 9 cup masala dabba), laser engraving..."
               value={formData.customNotes}
               onChange={(e) => setFormData({ ...formData, customNotes: e.target.value })}
-              className="w-full bg-royalDark border border-royalBorder focus:border-gold-royal rounded-xl p-3 text-white placeholder-gray-500 focus:outline-none"
+              className="w-full bg-cream-100 border border-wood-200 focus:border-wood-800 rounded-xl p-3 text-wood-950 placeholder-wood-400 focus:outline-none font-medium"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg text-sm transition-all mt-4"
+            className="w-full bg-waGreen-600 hover:bg-waGreen-700 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md text-xs transition-all mt-4"
           >
-            <MessageCircle className="w-5 h-5 fill-white" />
-            <span>Send Quotation Request via WhatsApp</span>
+            <MessageCircle className="w-4 h-4 fill-white" />
+            <span>Send Wholesale Request on WhatsApp</span>
           </button>
         </form>
 

@@ -7,44 +7,48 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: {
-          50: '#fffdf0',
-          100: '#fffae1',
-          200: '#fff4c2',
-          300: '#fee894',
-          400: '#fcd55c',
-          500: '#f9bd2a',
-          600: '#e59d18',
-          700: '#be7411',
-          800: '#985915',
-          900: '#7c4816',
-          950: '#462507',
-          royal: '#D4AF37',
-          warm: '#C59B27',
-          bright: '#FDF0A6',
+        wood: {
+          50: '#fdfbf7',
+          100: '#f7f2e8',
+          200: '#eee3d0',
+          300: '#e1cdb0',
+          400: '#ceae85',
+          500: '#bd9262',
+          600: '#a7764f',
+          700: '#895a3e',
+          800: '#714936',
+          900: '#5c3d2e',
+          950: '#341f17',
+          deep: '#2C1A0E',
+          warm: '#4A2E19',
+          amber: '#965A2C',
         },
-        royalDark: '#0B0E14',
-        royalCard: '#131822',
-        royalBorder: '#232C3D',
-        royalText: '#FAF8F5',
+        cream: {
+          50: '#FFFFFF',
+          100: '#FAF8F5',
+          200: '#F4EFE6',
+          300: '#EAE2D5',
+        },
+        gold: {
+          light: '#F5E6BE',
+          main: '#D4AF37',
+          dark: '#B08A22',
+        },
+        waGreen: {
+          50: '#ecfdf5',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+        }
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.25)',
-        'gold-glow-lg': '0 0 45px rgba(212, 175, 55, 0.4)',
-      },
-      animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
-        }
+        'soft-card': '0 4px 20px -2px rgba(74, 46, 25, 0.06), 0 2px 6px -1px rgba(74, 46, 25, 0.04)',
+        'soft-hover': '0 12px 30px -4px rgba(74, 46, 25, 0.12), 0 4px 12px -2px rgba(74, 46, 25, 0.08)',
+        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.3)',
       }
     },
   },
